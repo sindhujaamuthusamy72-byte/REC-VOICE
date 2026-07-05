@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REC Voice | Submit Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div>
+      <div class="brand">REC <span>Voice</span></div>
+      <div class="tagline">Speak up. Stay anonymous.</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="submit.html" class="active">Submit Feedback</a></li>
+        <li><a href="browse.html">Browse Issues</a></li>
+        <li><a href="guidelines.html">Guidelines</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h2><span class="accent-bar"></span>Submit an Issue</h2>
+      <p class="muted">
+        No name, email, or roll number is asked anywhere on this form — that's intentional.
+        Please avoid naming individuals in your description; refer to their role or
+        department instead (see <a href="guidelines.html">Guidelines</a>).
+      </p>
+
+      <div id="confirmBanner" class="confirm-banner">
+        ✓ Thanks — your issue has been added to the demo list below (refresh resets it, since this is a static practice page with no server).
+      </div>
+
+      <form id="feedbackForm" action="#" method="post">
+
+        <div class="privacy-note">
+          🔒 This form collects zero personal information. Submissions are completely anonymous by design.
+        </div>
+
+        <fieldset>
+          <legend>What is this about?</legend>
+
+          <div class="form-group">
+            <label>Category</label>
+            <div class="radio-group">
+              <label><input type="radio" name="category" value="teaching" checked> Teaching &amp; Staff</label>
+              <label><input type="radio" name="category" value="management"> Management &amp; Administration</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department / Area</label>
+            <select id="department" name="department" required>
+              <optgroup label="Academic Departments">
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="eee">EEE</option>
+              </optgroup>
+              <optgroup label="Administrative Areas">
+                <option value="hostel">Hostel Administration</option>
+                <option value="exam-cell">Exam Cell</option>
+                <option value="accounts">Accounts / Fee Office</option>
+                <option value="canteen">Canteen Services</option>
+                <option value="transport">Transport</option>
+                <option value="admin-general">General Administration</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Severity</label>
+            <div class="radio-group">
+              <label><input type="radio" name="severity" value="minor" checked> Minor</label>
+              <label><input type="radio" name="severity" value="moderate"> Moderate</label>
+              <label><input type="radio" name="severity" value="serious"> Serious</label>
+            </div>
+            <small class="hint">Serious = affects safety, academic fairness, or a large group of students</small>
+          </div>
+
+          <div class="form-group">
+            <label>Tags (select all that apply)</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="tags" value="behavior"> Behavior/Conduct</label>
+              <label><input type="checkbox" name="tags" value="academic"> Academic/Grading</label>
+              <label><input type="checkbox" name="tags" value="facilities"> Facilities</label>
+              <label><input type="checkbox" name="tags" value="financial"> Financial</label>
+              <label><input type="checkbox" name="tags" value="safety"> Safety</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Describe the Issue</legend>
+
+          <div class="form-group">
+            <label for="description">What happened?</label>
+            <textarea id="description" name="description" placeholder="Describe the issue factually. Avoid naming individuals — refer to their role instead, e.g. 'a professor in the CSE department'." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Your Year (optional, for statistics only)</label>
+            <select id="year" name="year">
+              <option value="">Prefer not to say</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label style="text-transform:none; display:flex; align-items:flex-start; gap:8px; font-weight:normal; color:var(--text);">
+            <input type="checkbox" id="confirmNoNames" name="confirm-no-names" required style="width:auto; margin-top:3px;">
+            I confirm this submission does not name or identify any individual, and is a genuine, factual concern.
+          </label>
+        </div>
+
+        <div class="btn-row">
+          <input type="submit" value="Submit Anonymously">
+          <input type="reset" value="Clear Form">
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>REC Voice — an independent student feedback initiative.</p>
+    <p><a href="guidelines.html">Read posting guidelines</a> before submitting.</p>
+  </footer>
+
+  <script>
+    // Demo-only behavior: since this is a static page with no backend/server,
+    // we just prevent the real page reload and show a confirmation banner.
+    const form = document.getElementById('feedbackForm');
+    const banner = document.getElementById('confirmBanner');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      banner.style.display = 'block';
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

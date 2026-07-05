@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REC Voice | Browse Issues</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div>
+      <div class="brand">REC <span>Voice</span></div>
+      <div class="tagline">Speak up. Stay anonymous.</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="submit.html">Submit Feedback</a></li>
+        <li><a href="browse.html" class="active">Browse Issues</a></li>
+        <li><a href="guidelines.html">Guidelines</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h2><span class="accent-bar"></span>Reported Issues</h2>
+      <p class="muted">
+        Every entry below was submitted anonymously. Upvote with "Me Too" if you've faced
+        the same issue — it helps the student council prioritize what gets escalated first.
+      </p>
+
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="teaching">Teaching &amp; Staff</option>
+            <option value="management">Management &amp; Administration</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="statusFilter">Status</label>
+          <select id="statusFilter">
+            <option value="all">All Statuses</option>
+            <option value="pending">Pending</option>
+            <option value="review">Under Review</option>
+            <option value="resolved">Resolved</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="severityFilter">Severity</label>
+          <select id="severityFilter">
+            <option value="all">All Severities</option>
+            <option value="minor">Minor</option>
+            <option value="moderate">Moderate</option>
+            <option value="serious">Serious</option>
+          </select>
+        </div>
+
+        <div class="filter-group" style="flex: 1;">
+          <label for="searchBox">Search</label>
+          <input type="text" id="searchBox" placeholder="Search by keyword or department...">
+        </div>
+      </div>
+
+      <p id="resultCount"></p>
+
+      <div class="table-wrap">
+        <table id="issuesTable">
+          <caption>Submitted Issues</caption>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Category</th>
+              <th>Department</th>
+              <th>Description</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Me Too</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr data-category="teaching" data-status="review" data-severity="serious" data-department="Computer Science">
+              <td>#041</td>
+              <td>Teaching &amp; Staff</td>
+              <td>Computer Science</td>
+              <td>A faculty member consistently marks lab records unfairly compared to verbal assessment given in class.</td>
+              <td><span class="badge badge-serious">Serious</span></td>
+              <td><span class="badge badge-review">Under Review</span></td>
+              <td><button class="metoo-btn" data-count="14">👍 14</button></td>
+            </tr>
+
+            <tr data-category="management" data-status="pending" data-severity="moderate" data-department="Hostel Administration">
+              <td>#040</td>
+              <td>Management &amp; Admin</td>
+              <td>Hostel Administration</td>
+              <td>Hot water in hostel bathrooms has not worked for over two weeks despite complaints.</td>
+              <td><span class="badge badge-moderate">Moderate</span></td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><button class="metoo-btn" data-count="27">👍 27</button></td>
+            </tr>
+
+            <tr data-category="management" data-status="resolved" data-severity="minor" data-department="Canteen Services">
+              <td>#039</td>
+              <td>Management &amp; Admin</td>
+              <td>Canteen Services</td>
+              <td>Canteen menu prices displayed do not match what's actually charged at the counter.</td>
+              <td><span class="badge badge-minor">Minor</span></td>
+              <td><span class="badge badge-resolved">Resolved</span></td>
+              <td><button class="metoo-btn" data-count="9">👍 9</button></td>
+            </tr>
+
+            <tr data-category="teaching" data-status="pending" data-severity="moderate" data-department="Mechanical">
+              <td>#038</td>
+              <td>Teaching &amp; Staff</td>
+              <td>Mechanical</td>
+              <td>Practical exam schedule was changed with less than a day's notice, affecting attendance marks.</td>
+              <td><span class="badge badge-moderate">Moderate</span></td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><button class="metoo-btn" data-count="11">👍 11</button></td>
+            </tr>
+
+            <tr data-category="management" data-status="review" data-severity="serious" data-department="Exam Cell">
+              <td>#037</td>
+              <td>Management &amp; Admin</td>
+              <td>Exam Cell</td>
+              <td>Revaluation requests from last semester still haven't been processed, delaying results.</td>
+              <td><span class="badge badge-serious">Serious</span></td>
+              <td><span class="badge badge-review">Under Review</span></td>
+              <td><button class="metoo-btn" data-count="33">👍 33</button></td>
+            </tr>
+
+            <tr data-category="teaching" data-status="resolved" data-severity="minor" data-department="Electronics">
+              <td>#036</td>
+              <td>Teaching &amp; Staff</td>
+              <td>Electronics</td>
+              <td>Class notes promised at the start of semester were never uploaded to the portal.</td>
+              <td><span class="badge badge-minor">Minor</span></td>
+              <td><span class="badge badge-resolved">Resolved</span></td>
+              <td><button class="metoo-btn" data-count="6">👍 6</button></td>
+            </tr>
+
+            <tr data-category="management" data-status="pending" data-severity="serious" data-department="Accounts / Fee Office">
+              <td>#035</td>
+              <td>Management &amp; Admin</td>
+              <td>Accounts / Fee Office</td>
+              <td>Students who paid fees in full are still being listed as defaulters in the portal.</td>
+              <td><span class="badge badge-serious">Serious</span></td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><button class="metoo-btn" data-count="21">👍 21</button></td>
+            </tr>
+
+            <tr data-category="teaching" data-status="pending" data-severity="minor" data-department="Civil">
+              <td>#034</td>
+              <td>Teaching &amp; Staff</td>
+              <td>Civil</td>
+              <td>Assignment feedback is rarely given, making it hard to know where to improve.</td>
+              <td><span class="badge badge-minor">Minor</span></td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><button class="metoo-btn" data-count="8">👍 8</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p id="noResults">No issues match your filters. Try widening your search.</p>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>REC Voice — an independent student feedback initiative.</p>
+    <p><a href="guidelines.html">Read posting guidelines</a> before submitting.</p>
+  </footer>
+
+  <script>
+    const categoryFilter = document.getElementById('categoryFilter');
+    const statusFilter = document.getElementById('statusFilter');
+    const severityFilter = document.getElementById('severityFilter');
+    const searchBox = document.getElementById('searchBox');
+    const rows = Array.from(document.querySelectorAll('#issuesTable tbody tr'));
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const table = document.getElementById('issuesTable');
+
+    function applyFilters() {
+      const cat = categoryFilter.value;
+      const status = statusFilter.value;
+      const severity = severityFilter.value;
+      const query = searchBox.value.trim().toLowerCase();
+
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const matchesCategory = cat === 'all' || row.dataset.category === cat;
+        const matchesStatus = status === 'all' || row.dataset.status === status;
+        const matchesSeverity = severity === 'all' || row.dataset.severity === severity;
+        const matchesSearch = query === '' || row.textContent.toLowerCase().includes(query);
+
+        const isVisible = matchesCategory && matchesStatus && matchesSeverity && matchesSearch;
+        row.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      resultCount.textContent = `Showing ${visibleCount} of ${rows.length} issues`;
+      table.style.display = visibleCount === 0 ? 'none' : 'table';
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    categoryFilter.addEventListener('change', applyFilters);
+    statusFilter.addEventListener('change', applyFilters);
+    severityFilter.addEventListener('change', applyFilters);
+    searchBox.addEventListener('input', applyFilters);
+
+    // "Me Too" button — increments in memory only (resets on page reload,
+    // since there's no backend/database behind this practice project)
+    document.querySelectorAll('.metoo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = parseInt(btn.dataset.count, 10);
+        const updated = current + 1;
+        btn.dataset.count = updated;
+        btn.textContent = `👍 ${updated}`;
+      });
+    });
+
+    applyFilters();
+  </script>
+
+</body>
+</html>
