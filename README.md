@@ -1,17 +1,17 @@
 # REC Voice
 
 An anonymous feedback platform where students can report issues with
-**teaching staff** or **college management** — without attaching a single
+**teaching staff** or **college management** - without attaching a single
 piece of personal information. No login, no name field, no tracking.
 
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 
-## 📖 About
+## About
 
-A lot of genuine problems on campus — biased grading, favoritism, unsafe
-hostel conditions, unfair fee practices — go unreported because students
+A lot of genuine problems on campus - biased grading, favoritism, unsafe
+hostel conditions, unfair fee practices - go unreported because students
 fear being singled out. **REC Voice** removes that barrier: there's nothing
 to identify who submitted an issue, because nothing identifying is ever asked
 for in the first place.
@@ -26,13 +26,13 @@ face the same problem — so the most common issues surface naturally.
 
 ##  Features
 
--  **True anonymity** — zero personal fields anywhere on the form
--  **Categorized reporting** — Teaching & Staff vs. Management & Administration
--  **Severity levels & tags** — Minor / Moderate / Serious, with issue tags like Facilities, Safety, Academic
--  **Live filtering & search** — filter the issue table by category, status, or severity, and search by keyword — all in real time with vanilla JS
--  **"Me Too" upvoting** — surface the issues affecting the most students
--  **Posting guidelines page** — keeps submissions factual and non-identifying
--  **Responsive design** — works cleanly on mobile and desktop
+-  **True anonymity** - zero personal fields anywhere on the form
+-  **Categorized reporting** - Teaching & Staff vs. Management & Administration
+-  **Severity levels & tags** - Minor / Moderate / Serious, with issue tags like Facilities, Safety, Academic
+-  **Live filtering & search** - filter the issue table by category, status, or severity, and search by keyword — all in real time with vanilla JS
+-  **"Me Too" upvoting** - surface the issues affecting the most students
+-  **Posting guidelines page** - keeps submissions factual and non-identifying
+-  **Responsive design** - works cleanly on mobile and desktop
 
 ##  Tech Stack
 
@@ -85,7 +85,7 @@ No installation or build tools required.
 ##  Author
 
 **Sindhu**
-First-year student project — built to practice HTML forms, tables, and
+First-year student project - built to practice HTML forms, tables, and
 JavaScript DOM manipulation with a real, useful idea.
 
 ##  License
